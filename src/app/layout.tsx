@@ -1,10 +1,8 @@
 "use client";
-
+import { inter, lustiana } from "@/ui/fonts";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { Inter } from "next/font/google";
+import { Toaster } from "sonner";
 import "./globals.css";
-
-const inter = Inter({ subsets: ["latin"] });
 
 const queryClient = new QueryClient();
 
@@ -16,7 +14,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <QueryClientProvider client={queryClient}>
-        <body className={inter.className}>{children}</body>
+        <body className={`${inter.variable} ${lustiana.variable} antialiased`}>
+          <Toaster position="top-right" />
+          <div className="flex h-screen justify-center flex-col md:flex-row bg-gradient-to-r from-background to-backgroundDark">
+            {children}
+          </div>
+        </body>
       </QueryClientProvider>
     </html>
   );

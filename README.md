@@ -50,3 +50,19 @@ $ npm i
 ### Formatting
 
 Prettier is our formatter of choice. We added some settings for VSCode. If you use a different IDE please adapt the settings.
+
+### Usage of Json-server
+
+Due to API call limitation, I use the help of `json-server` for testing locally, a `db.json` file can be found in the root folder
+
+run
+
+```bash
+$ npm run server-json
+```
+
+data can be accessed at
+
+```bash
+$ http://localhost:3500/employees
+```

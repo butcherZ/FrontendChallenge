@@ -1,10 +1,21 @@
-"use client";
+import Breadcrumbs from "@/ui/BreadCrumbs";
+import CreateEmployeeForm from "@/ui/components/CreateEmployeeForm.component";
 
-export default function EditEmployeePage() {
+export default function CreateEmployeePage() {
   // TODO Implement create employee page
   return (
-    <main className="flex h-screen flex-col items-start justify-start p-4">
-      Create Employee
-    </main>
+    <div className="w-full h-screen flex flex-col items-center">
+      <Breadcrumbs
+        breadcrumbs={[
+          { label: "Employees", href: "/employee" },
+          {
+            label: "Create Employee",
+            href: "/employee/create",
+            active: true,
+          },
+        ]}
+      />
+      <CreateEmployeeForm />
+    </div>
   );
 }
