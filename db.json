@@ -23,12 +23,12 @@
     {
       "id": "5",
       "employee_name": "Rhona Davidson",
-      "employee_salary": 1234
+      "employee_salary": 12345678
     },
     {
       "id": "6",
       "employee_name": "Colleen Hurst",
-      "employee_salary": 111
+      "employee_salary": 50000
     },
     {
       "id": "7",
@@ -79,6 +79,21 @@
       "id": "16",
       "employee_name": "Caesar Vance",
       "employee_salary": 106450
+    },
+    {
+      "id": "525",
+      "employee_name": "illidan",
+      "employee_salary": 6666
+    },
+    {
+      "id": "119",
+      "employee_name": "tyrande",
+      "employee_salary": 888888
+    },
+    {
+      "id": "754",
+      "employee_name": "malfurion",
+      "employee_salary": 333332
     }
   ]
 }

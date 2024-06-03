@@ -13,8 +13,15 @@ export default class EmployeeService {
   }
 
   private constructor(
-    private datasource: EmployeeDatasourceContract = new EmployeeDatasource(),
+    private datasource: EmployeeDatasourceContract = new EmployeeDatasource()
   ) {}
+
+  // add static method for mock testing
+  public static setDatasourceForTesting(
+    datasource: EmployeeDatasourceContract
+  ): void {
+    EmployeeService._instance = new EmployeeService(datasource);
+  }
 
   public getEmployeeList(): Promise<EmployeeListModel | undefined> {
     return this.datasource.getEmployeeList();
@@ -23,17 +30,17 @@ export default class EmployeeService {
     return this.datasource.createEmployee(params);
   }
   public getEmployeeById(
-    params: GetEmployeeByIdParams,
+    params: GetEmployeeByIdParams
   ): Promise<EmployeeModel | undefined> {
     return this.datasource.getEmployeeById(params);
   }
   public updateEmployeeById(
-    params: unknown,
+    params: unknown
   ): Promise<EmployeeModel | undefined> {
     return this.datasource.updateEmployeeById(params);
   }
   public deleteEmployeeById(
-    params: unknown,
+    params: unknown
   ): Promise<EmployeeModel | undefined> {
     return this.datasource.deleteEmployeeById(params);
   }
