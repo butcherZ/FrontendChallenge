@@ -9,7 +9,7 @@ export default function NotFound() {
       </div>
       <Link
         href="/employee"
-        className="rounded-md p-4 m-8 text-white bg-blue-500 hover:shadow-lg hover:shadow-blue-500/50"
+        className="rounded-md p-4 m-8 text-gray-900 bg-tone hover:shadow-lg hover:shadow-tone/50"
       >
         Go Back to Employees page
       </Link>

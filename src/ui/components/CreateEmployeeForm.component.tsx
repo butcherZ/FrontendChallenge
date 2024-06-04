@@ -12,7 +12,6 @@ export default function CreateEmployeeForm() {
   const [state, dispatch] = useFormState(createEmployee, initialState);
 
   //TODO add client side validation to avoid sending bad requests to server
-  console.log("state is", state);
 
   useEffect(() => {
     if (state.type === "success") {

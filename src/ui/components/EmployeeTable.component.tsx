@@ -27,7 +27,7 @@ const EmployeeTable = async ({
       <div className="min-w-full overflow-hidden rounded-lg shadow-md">
         <table className="min-w-full text-gray-900 md:table">
           <thead
-            className={`text-left text-sm font-bold text-black bg-[#cecee4] rounded-t-lg`}
+            className={`text-left text-sm font-bold text-black bg-white rounded-t-lg`}
           >
             <tr>
               <th scope="col" className="px-4 py-5 font-medium sm:pl-6">

@@ -17,7 +17,7 @@ class MockEmployeeDatasource implements EmployeeDatasourceContract {
   createEmployee(params: unknown): Promise<EmployeeModel | undefined> {
     return Promise.resolve({
       id: 3,
-      employee_name: "New Employee",
+      employee_name: "illidan",
       employee_salary: 70000,
     });
   }
@@ -39,8 +39,8 @@ class MockEmployeeDatasource implements EmployeeDatasourceContract {
     if ((params as any).id === 1) {
       return Promise.resolve({
         id: 1,
-        employee_name: "Updated Employee",
-        employee_salary: 50000,
+        employee_name: "ziyi",
+        employee_salary: 111111,
       });
     }
     return Promise.resolve(undefined);
@@ -50,7 +50,7 @@ class MockEmployeeDatasource implements EmployeeDatasourceContract {
     if ((params as any).id === 1) {
       return Promise.resolve({
         id: 1,
-        employee_name: "Deleted Employee",
+        employee_name: "ziyi",
         employee_salary: 50000,
       });
     }
@@ -73,5 +73,60 @@ describe("EmployeeService", () => {
       { id: 1, employee_name: "ziyi", employee_salary: 50000 },
       { id: 2, employee_name: "toto", employee_salary: 60000 },
     ]);
+  });
+
+  test("should create a new employee", async () => {
+    const newEmployee = await service.createEmployee({
+      employee_name: "illidan",
+      employee_salary: 70000,
+    });
+    expect(newEmployee).toEqual({
+      id: 3,
+      employee_name: "illidan",
+      employee_salary: 70000,
+    });
+  });
+
+  test("should fetch employee by id", async () => {
+    const employee = await service.getEmployeeById({ id: 1 });
+    expect(employee).toEqual({
+      id: 1,
+      employee_name: "ziyi",
+      employee_salary: 50000,
+    });
+
+    const nonExistentEmployee = await service.getEmployeeById({ id: 9999 });
+    expect(nonExistentEmployee).toBeUndefined();
+  });
+
+  test("should update an employee by id", async () => {
+    const updatedEmployee = await service.updateEmployeeById({
+      id: 1,
+      employee_name: "ziyi",
+      employee_salary: 111111,
+    });
+    expect(updatedEmployee).toEqual({
+      id: 1,
+      employee_name: "ziyi",
+      employee_salary: 111111,
+    });
+
+    const nonExistentUpdate = await service.updateEmployeeById({
+      id: 9999,
+      employee_name: "nope",
+    });
+    expect(nonExistentUpdate).toBeUndefined();
+  });
+
+  test("should delete an employee by id", async () => {
+    const deletedEmployee = await service.deleteEmployeeById({ id: 1 });
+    expect(deletedEmployee).toEqual({
+      id: 1,
+      employee_name: "ziyi",
+      employee_salary: 50000,
+    });
+
+    const nonExistentDelete = await service.deleteEmployeeById({ id: 9999 });
+    expect(nonExistentDelete).toBeUndefined();
   });
 });

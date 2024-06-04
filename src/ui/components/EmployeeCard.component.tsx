@@ -75,10 +75,10 @@ const EmployeeCard = ({ employee }: EmployeeCardProps): ReactNode => {
       <div className="mt-6 flex justify-end gap-4">
         <Link
           scroll={false}
-          className="rounded-md p-2 bg-blue-500 hover:shadow-lg hover:shadow-blue-500/50"
+          className="rounded-md p-2 bg-tone hover:shadow-lg hover:shadow-tone/50"
           href={`/employee/${employee?.id}/edit`}
         >
-          <span className="text-md px-2 text-white">Edit</span>
+          <span className="text-md px-2 text-gray-900">Edit</span>
         </Link>
         <DeleteEmployeeButton id={employee?.id.toString()} />
       </div>

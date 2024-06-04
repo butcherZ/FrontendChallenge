@@ -13,6 +13,7 @@ const config: Config = {
         white: "#F6F6F6",
         background: "#E4E4F0",
         backgroundDark: "#DBDBDB",
+        tone: "#aeaec6",
       },
     },
   },

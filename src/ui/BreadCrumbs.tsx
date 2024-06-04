@@ -23,16 +23,18 @@ export default function Breadcrumbs({ breadcrumbs }: BreadcrumbsProps) {
             <li
               key={`${breadcrumb.href}-${index}`}
               className={`flex items-center ${
-                breadcrumb.active ? "text-gray-900" : "text-gray-500"
+                breadcrumb.active ? "text-gray-900" : "text-tone"
               }`}
             >
               {breadcrumb.active ? (
-                <span aria-current="page">{breadcrumb.label}</span>
+                <span aria-current="page" className="text-3xl">
+                  {breadcrumb.label}
+                </span>
               ) : (
                 <Link
                   href={breadcrumb.href}
                   scroll={false}
-                  className="hover:text-gray-700"
+                  className="hover:text-gray-700 text-3xl"
                 >
                   {breadcrumb.label}
                 </Link>

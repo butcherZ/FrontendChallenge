@@ -47,7 +47,7 @@ export const CreateEmployeeButton = () => {
     <Link
       href="/employee/create"
       scroll={false}
-      className="rounded-md p-2 bg-green-500 hover:shadow-lg hover:shadow-green-500/50"
+      className="rounded-md p-2  bg-tone hover:shadow-lg hover:shadow-bg-tone/50"
     >
       <div className="flex items-center">
         <svg
@@ -55,8 +55,8 @@ export const CreateEmployeeButton = () => {
           fill="none"
           viewBox="0 0 24 24"
           strokeWidth="1.5"
-          stroke="white"
-          className="size-6"
+          stroke=""
+          className="size-6 stroke-gray-900"
         >
           <path
             strokeLinecap="round"
@@ -64,7 +64,7 @@ export const CreateEmployeeButton = () => {
             d="M12 9v6m3-3H9m12 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
           />
         </svg>
-        <span className="text-sm px-2 text-white">Create</span>
+        <span className="text-sm px-2 text-gray-900">Create</span>
       </div>
     </Link>
   );
@@ -75,15 +75,15 @@ export const UpdateEmployeeButton = ({ id }: { id: string }) => {
     <Link
       href={`/employee/${id}/edit`}
       scroll={false}
-      className="rounded-md border p-2 hover:bg-blue-50"
+      className="rounded-md border p-2 hover:bg-tone/50"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
         viewBox="0 0 24 24"
         strokeWidth="1.5"
-        stroke="#3b82f6"
-        className="w-5"
+        stroke=""
+        className="w-5  stroke-tone"
       >
         <path
           strokeLinecap="round"
@@ -110,8 +110,8 @@ export const DeleteEmployeeButton = ({ id }: { id: string }) => {
           fill="none"
           viewBox="0 0 24 24"
           strokeWidth="1.5"
-          stroke="#fb7185"
-          className="w-5"
+          stroke=""
+          className="w-5 stroke-gray-500 hover:stroke-red-300"
         >
           <path
             strokeLinecap="round"

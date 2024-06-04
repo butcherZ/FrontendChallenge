@@ -13,6 +13,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <title>Employee management</title>
+        <meta
+          name="description"
+          content="a simple application for employees management"
+        />
+      </head>
       <QueryClientProvider client={queryClient}>
         <body className={`${inter.variable} ${lustiana.variable} antialiased`}>
           <Toaster position="top-right" />

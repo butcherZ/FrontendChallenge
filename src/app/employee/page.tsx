@@ -14,7 +14,7 @@ export default function EmployeePage({
   return (
     <>
       <div className="flex w-full items-center justify-between my-6 sticky z-10">
-        <h1 className="text-2xl">Employees</h1>
+        <h1 className="text-3xl">Employees</h1>
         <CreateEmployeeButton />
       </div>
 
